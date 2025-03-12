@@ -1,21 +1,34 @@
 package org.lessons.java;
 
+import java.util.ArrayList;
+
 public class Numbers {
 
     // # Variabili d'istanza
     private int[] integerNumbers;
+    private int currentIndex;
 
     // # Costruttori
     public Numbers(int[] numbersArray) {
         this.integerNumbers = numbersArray;
+        this.currentIndex = 0;
     }
 
-    // public int getNextElement() {
-    // prossimo elemento rispetto all'ultima volta in cui è stato invocato
-    // }
+    // # Metodi
+    public void getNumbers() {
+        ArrayList<Integer> integerArray = new ArrayList<>();
 
-    // public boolean hasNextElements() {
-    // restituisce true se ci sono ancora elementi nell'array
-    // }
+        for (int num : integerNumbers) {
+            integerArray.add(num);
+        }
+
+        System.out.println("\n" + integerArray);
+    }
+
+    public int getNextElement() {
+        int currentNumber = integerNumbers[currentIndex];
+        currentIndex++;
+        return currentNumber;
+    }
 
 }
