@@ -1,6 +1,7 @@
 package org.lessons.java;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Numbers {
 
@@ -29,6 +30,18 @@ public class Numbers {
         int currentNumber = integerNumbers[currentIndex];
         currentIndex++;
         return currentNumber;
+    }
+
+    public boolean hasNextElements() {
+        ArrayList<Integer> integerArray = new ArrayList<>();
+
+        for (int i = currentIndex; i < integerNumbers.length; i++) {
+            integerArray.add(integerNumbers[i]);
+        }
+
+        Iterator<Integer> iterator = integerArray.iterator();
+
+        return iterator.hasNext();
     }
 
 }
